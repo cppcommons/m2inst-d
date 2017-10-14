@@ -1,0 +1,12 @@
+{
+	"name": "ms2run1",
+    "targetType": "executable",
+	"authors": [
+		"owner"
+	],
+	"description": "A minimal D application.",
+	"license": "proprietary",
+    "sourcePaths":["src"],
+    "importPaths":["src"],
+    "sourceFiles":[]
+}
