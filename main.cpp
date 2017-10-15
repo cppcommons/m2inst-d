@@ -10,6 +10,7 @@
 #include <string>
 #include <sstream>
 #include <bitset>
+#include <cmath>
 
 QString str64bit(quint64 x) {
     std::stringstream ss;
@@ -119,26 +120,86 @@ int main(int argc, char *argv[])
     qDebug() << str64bit(evaled2);
     duk_pop(ctx);
 
+
+    QElapsedTimer timer;
+    timer.start();
+
     auto f = [=](quint64 x) -> bool {
         QString sp;
         sp.sprintf("%llu", x);
-        qDebug().noquote() << "x=" << sp;
+        //qDebug().noquote() << "x=" << sp;
         duk_push_string(ctx, sp.toUtf8().constData());
         duk_eval(ctx);
         QString evaled = QString::fromUtf8(duk_to_string(ctx, -1));
-        printf("eval'ed=%s\n", evaled.toLocal8Bit().constData());
-        quint64 evaled2 = strtoull(evaled.toUtf8().constData(), NULL, 10);
-        printf("eval'ed2=%llu\n", evaled2);
-        std::cout << static_cast<std::bitset<64> >(evaled2) << std::endl;
-        qDebug() << str64bit(evaled2);
+        //printf("eval'ed=%s\n", evaled.toLocal8Bit().constData());
+        //quint64 evaled2 = strtoull(evaled.toUtf8().constData(), NULL, 10);
+        //printf("eval'ed2=%llu\n", evaled2);
+        //std::cout << static_cast<std::bitset<64> >(evaled2) << std::endl;
+        //qDebug() << str64bit(evaled2);
         duk_pop(ctx);
-        return true;
+        return evaled == sp;
     };
 
-    for (quint64 i=0; i<5; i++) {
-        bool b = f(i);
-    }
+    auto g = [=](quint64 idx_max) -> quint64 {
+        quint64 idx_ok = 0;
+        //quint64 idx_max = UINT64_MAX;
+        quint64 idx_mid;
+        for (;;) {
+            //qDebug() << idx_ok << idx_max;
+            bool b1 = f(idx_max);
+            if (b1) {
+                idx_ok = idx_max;
+                //qDebug() << "(1)" << idx_ok;
+                break;
+            } else {
+                idx_max--;
+            }
+            if (idx_max == idx_ok) break;
+            quint64 diff = idx_max - idx_ok;
+            idx_mid = idx_ok + (diff / 2);
+            bool b2 = f(idx_mid);
+            if (b2) {
+                idx_ok = idx_mid;
+                //qDebug() << "(2)" << idx_ok;
+                continue;
+            } else {
+                idx_max = idx_mid;
+                continue;
+            }
+        }
+        return idx_ok;
+    };
 
+    int p = 0;
+    for (p=0; p<64; p++) {
+        long double z = std::pow((long double)2, p) - 1;
+        printf("%d %Lf\n", p ,z);
+        char buff[1024];
+        sprintf(buff, "%Lf", z);
+        QString s1 = buff;
+        //s1.sprintf("%Lf", z);
+        qDebug() << s1;
+        qDebug() << s1.split(".")[0];
+
+        QString s2 = s1.split(".")[0];
+        quint64 s2n = strtoull(s2.toLatin1().constData(), NULL, 10);
+        qDebug() << p << s2 << s2n << f(s2n);
+    }
+    return 0;
+
+    quint64 result = UINT64_MAX;
+    for (;;) {
+        result = g(result);
+        if (timer.elapsed() > 1000) {
+            qDebug() << "result=" << result;
+            qDebug() << str64bit(result);
+            timer.restart();
+            //QThread::msleep(1000);
+        }
+        if (str64bit(result).endsWith("1")) break;
+        result--;
+    }
+    qDebug() << "result=" << result;
 
     duk_destroy_heap(ctx);
     return 0;
