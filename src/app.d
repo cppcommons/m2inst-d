@@ -14,6 +14,9 @@ auto ls = executeShell("cmd /c dir C:\\");
 if (ls.status != 0) writeln("Failed to retrieve file listing");
 else writeln(ls.output);
 
+auto MSYS2_NAME = environment.get("MSYS2_NAME");
+writeln(MSYS2_NAME);
+
 return 0;
 }
 

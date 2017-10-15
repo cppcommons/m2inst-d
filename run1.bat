@@ -1,3 +1,7 @@
+call mg32.bat qmake m2boot.pro -spec win32-g++ "CONFIG+=release"
+call mg32.bat mingw32-make -f Makefile.Release
+release\m2boot.exe
+
 call d32.bat build --build=release
 copy C:\D\dmd2\windows\bin\libcurl.dll .
 

@@ -7,3 +7,8 @@ root
 *.dll
 /*.exe
 /binaries
+Makefile*
+desktop.ini
+*.user
+*_plugin_import.cpp
+release
