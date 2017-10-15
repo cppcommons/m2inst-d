@@ -6,8 +6,17 @@
 
 #include "duktape.h"
 
-//#include <iostream>
-//#include <string>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <bitset>
+
+QString str64bit(quint64 x) {
+    std::stringstream ss;
+    ss << static_cast<std::bitset<64> >(x);
+    std::string x_bin = ss.str();
+    return QString::fromLatin1(x_bin.c_str());
+}
 
 QString JX9_PROG = R"***(
 print(11+22)
@@ -94,7 +103,67 @@ int main(int argc, char *argv[])
     } else {
         printf("error: %s\n", duk_to_string(ctx, -1));
     }
+    duk_pop(ctx);
+
+    unsigned long long ull = UINT64_MAX;
+    QString sp;
+    sp.sprintf("%llu", ull);
+    qDebug().noquote() << sp;
+    duk_push_string(ctx, sp.toUtf8().constData());
+    duk_eval(ctx);
+    QString evaled = QString::fromUtf8(duk_to_string(ctx, -1));
+    printf("eval'ed=%s\n", evaled.toLocal8Bit().constData());
+    quint64 evaled2 = strtoull(evaled.toUtf8().constData(), NULL, 10);
+    printf("eval'ed2=%llu\n", evaled2);
+    std::cout << static_cast<std::bitset<64> >(evaled2) << std::endl;
+    qDebug() << str64bit(evaled2);
+    duk_pop(ctx);
+
+    auto f = [=](quint64 x) -> bool {
+        QString sp;
+        sp.sprintf("%llu", x);
+        qDebug().noquote() << "x=" << sp;
+        duk_push_string(ctx, sp.toUtf8().constData());
+        duk_eval(ctx);
+        QString evaled = QString::fromUtf8(duk_to_string(ctx, -1));
+        printf("eval'ed=%s\n", evaled.toLocal8Bit().constData());
+        quint64 evaled2 = strtoull(evaled.toUtf8().constData(), NULL, 10);
+        printf("eval'ed2=%llu\n", evaled2);
+        std::cout << static_cast<std::bitset<64> >(evaled2) << std::endl;
+        qDebug() << str64bit(evaled2);
+        duk_pop(ctx);
+        return true;
+    };
+
+    for (quint64 i=0; i<5; i++) {
+        bool b = f(i);
+    }
+
 
     duk_destroy_heap(ctx);
     return 0;
 }
+
+#if 0x0
+
+#include <iostream>
+#include <bitset>
+
+int main() {
+    unsigned x = 11;
+    std::cout << static_cast<std::bitset<8> >(x) << std::endl;
+}
+
+#include <iostream>
+#include <sstream>
+#include <bitset>
+
+int main() {
+    unsigned x = 11;
+    std::stringstream ss;
+    ss << static_cast<std::bitset<8> >(x);
+    std::string x_bin = ss.str();
+    std::cout << x_bin << std::endl;
+}
+
+#endif
