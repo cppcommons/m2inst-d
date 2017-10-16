@@ -104,6 +104,7 @@ int main(int argc, char *argv[]) {
 
     //(2) https://codedocs.xyz/ChaiScript/ChaiScript/index.html
     chai(R"***(print("(2) hello world") )***");
+    chai(R"[text]( print("(2) hello world") )[text]");
 
     //(3) https://codedocs.xyz/ChaiScript/ChaiScript/index.html
     int result = chai.eval<int>("1 + 3");
