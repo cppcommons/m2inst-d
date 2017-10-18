@@ -1,0 +1,36 @@
+/* Converted to D from MemoryModule_htod.h by htod */
+module MemoryModule;
+//C:\D\dmd2\src\druntime\import\core\sys\windows\basetsd.d(70,16)  [SJIS]:     alias long INT_PTR, LONG_PTR;
+//C:\D\dmd2\src\druntime\import\core\sys\windows\windef.d(116,51)  [SJIS]: alias extern (Windows) INT_PTR function() nothrow FARPROC, NEARPROC, PROC;
+import std.string;
+
+/**
+ * Load DLL from memory location.
+ *
+ * All dependencies are resolved using default LoadLibrary/GetProcAddress
+ * calls through the Windows API.
+ */
+//HMEMORYMODULE MemoryLoadLibrary(const void *);
+//C     void * MemoryLoadLibrary(const unsigned char *);
+extern (C):
+//void * MemoryLoadLibrary(ubyte *);
+void * MemoryLoadLibrary(immutable ubyte *);
+
+/**
+ * Get address of exported method.
+ */
+//FARPROC MemoryGetProcAddress(HMEMORYMODULE, LPCSTR);
+//C     void * MemoryGetProcAddress(void *, char *);
+//void * MemoryGetProcAddress(void *, char *);
+void * MemoryGetProcAddress(void *, immutable char *);
+
+/**
+ * Free previously loaded DLL.
+ */
+//void MemoryFreeLibrary(HMEMORYMODULE);
+//C     void MemoryFreeLibrary(void *);
+void  MemoryFreeLibrary(void *);
+
+void * MyGetProcAddress(void *handle, string name) {
+	return MemoryGetProcAddress(handle, toStringz(name));
+}
