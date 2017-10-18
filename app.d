@@ -9,13 +9,16 @@ import std.conv: to;
 
 mixin(grammar(`
 M2Pkgs:
-    List     < Elem* / " "*
+    #List     < Elem* / " "*
+    #List     < Elem* eoi
+    List     < Pkg* eoi
     Elem     < Pkg / :Delim / :Parens
     #Pkg      <- identifier
     Pkg      <~ (Letter+ "/" Letter+) / Letter+
     Letter   <- [a-zA-Z0-9]
     Delim    <- "," / ";"
     Parens   <~ "(" (!")" .)* ")"
+    Spacing <- (space / Parens / Delim)*
     # dummy
 `));
 
@@ -37,6 +40,18 @@ void main()
   import std.stdio;
 
   {
+    import std.stdio;
+    import std.net.curl;
+    //import my.net.curl;
+    
+    foreach (chunk; byChunkAsync("https://raw.githubusercontent.com/cyginst/ms2inst-v1/master/binaries/msys2-i686-20161025.7z", 20)) {
+      //writeln(chunk);
+      writeln(".");
+      stdout.flush();
+    }
+  }
+
+  {
     //import core.stdc.stdlib: getenv;
     import std.process: environment;
     import std.string: strip;
@@ -48,7 +63,7 @@ void main()
       return;
     }
     auto p = M2Pkgs(pkgs);
-    writeln(p.successful);
+    writeln(p);
     if (!p.successful) {
       writeln("not success!");
       return;
@@ -119,26 +134,6 @@ void main()
   }
 
 }
-
-/*
-import std.stdio;
-import std.string;
-import std.conv;
-import std.file;
-import std.windows.charset;
-
-void mainX(){
-  string utf8 = "あいうえお";//UTF8
-  writeln("utf8 : ", utf8);
-  // UTF8 を Shift-JIS に
-  writeln("utf8 to sjis : ", to!(string)(toMBSz(utf8)));
-hite
-  auto sjis = File("sjis.txt").readln;//あいうえおをS-JISで保存したファイル
-  writeln("sjis : ", sjis);
-  // Shift-JIS を UTF8 に
-  writeln("sjis to utf8 : ", fromMBSz(toStringz(cast(char[])sjis)));
-}
-*/
 
 /+
 struct ParseTree
