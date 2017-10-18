@@ -54,10 +54,37 @@ void main() {
 			return;
 		}
 		writeln("4");
-    //if (stream->hSession == NULL) {
-    //    HeapDestroy(stream->hHeap);
-    //    return 0;
-    //}
+
+		auto hConnect = WinHttpConnect(hSession, cast(wchar *)hostNameZ, urlComponents.nPort, 0);
+		if (hConnect == NULL) {
+			WinHttpCloseHandle(hSession);
+			writeln("5");
+			return;
+		}
+		writeln("6");
+
+		DWORD dwOpenRequestFlag = (INTERNET_SCHEME_HTTPS == urlComponents.nScheme) ? WINHTTP_FLAG_SECURE : 0;
+		writefln("dwOpenRequestFlag=0x%08x", dwOpenRequestFlag);
+		auto hRequest = WinHttpOpenRequest(hConnect, "GET", cast(wchar *)urlPathZ, NULL, WINHTTP_NO_REFERER, WINHTTP_DEFAULT_ACCEPT_TYPES, dwOpenRequestFlag );
+		if (hRequest == NULL) {
+			WinHttpCloseHandle(hConnect);
+			WinHttpCloseHandle(hSession);
+			writeln("7");
+			return;
+		}
+		writeln("8");
+
+		if (!WinHttpSendRequest(hRequest, WINHTTP_NO_ADDITIONAL_HEADERS, 0, WINHTTP_NO_REQUEST_DATA, 0, WINHTTP_IGNORE_REQUEST_TOTAL_LENGTH, 0)) {
+			WinHttpCloseHandle(hRequest);
+			WinHttpCloseHandle(hConnect);
+			WinHttpCloseHandle(hSession);
+			writeln("9");
+			return;
+		}
+		writeln("10");
+
+
+
 	}
 }
 
