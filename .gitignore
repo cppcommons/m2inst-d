@@ -12,3 +12,10 @@ desktop.ini
 *.user
 *_plugin_import.cpp
 release
+/docs
+/duktape-2.2.0
+/usr
+/lisp
+/reference
+/site-lisp
+/ChaiScript-6.0.0
