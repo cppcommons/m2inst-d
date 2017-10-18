@@ -13,7 +13,10 @@ void main() {
 		import std.conv: to;
 		import std.string : toStringz;
 		import std.utf: toUTF16z;
+
+		string app = "Sample Application/1.0";
 		string url = "https://raw.githubusercontent.com/cyginst/ms2inst-v1/master/binaries/msys2-i686-20161025.7z";
+
 		URL_COMPONENTS urlComponents;
 
 		assert(urlComponents.dwStructSize == 0);
@@ -40,10 +43,21 @@ void main() {
 			return;
 		}
 	    writeln("2");
-		//writeln(hostNameZ);
 		writeln(hostNameZ[0 .. wcslen(cast(wchar *)hostNameZ)]);
 		writeln(urlPathZ[0 .. wcslen(cast(wchar *)urlPathZ)]);
-		//writeln(urlPathZ);
+		writeln(urlComponents.nPort);
+
+		const wchar * appZ = to!(wstring)(app).toUTF16z;
+		auto hSession = WinHttpOpen(appZ, WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, WINHTTP_NO_PROXY_NAME, WINHTTP_NO_PROXY_BYPASS, 0);
+		if (hSession == NULL) {
+			writeln("3");
+			return;
+		}
+		writeln("4");
+    //if (stream->hSession == NULL) {
+    //    HeapDestroy(stream->hHeap);
+    //    return 0;
+    //}
 	}
 }
 
