@@ -15,7 +15,8 @@ void main() {
 		import std.utf: toUTF16z;
 
 		string app = "Sample Application/1.0";
-		string url = "https://raw.githubusercontent.com/cyginst/ms2inst-v1/master/binaries/msys2-i686-20161025.7z";
+		//string url = "https://raw.githubusercontent.com/cyginst/ms2inst-v1/master/binaries/msys2-i686-20161025.7z";
+		string url = "https://raw.githubusercontent.com/cyginst/ms2inst-v1/master/ms2inst.bat";
 
 		URL_COMPONENTS urlComponents;
 
@@ -94,6 +95,24 @@ void main() {
 		writeln(headerZ[0 .. wcslen(cast(wchar *)headerZ)]);
 		writeln("12");
 
+		char[] lpData;
+		DWORD  dwTotalSize = 0;
+		DWORD  dwSize = 0;
+
+		for (;;) {
+			WinHttpQueryDataAvailable(hRequest, &dwSize);
+			if (!dwSize) break;
+			writefln("dwSize=%u", dwSize);
+			lpData.length = dwTotalSize + dwSize;
+			WinHttpReadData(hRequest, cast(char *)&lpData[dwTotalSize], dwSize, NULL);
+			dwTotalSize += dwSize;
+		}
+		writeln(lpData);
+
+		WinHttpCloseHandle(hRequest);
+		WinHttpCloseHandle(hConnect);
+		WinHttpCloseHandle(hSession);
+		writeln("end");
 
 	}
 }
