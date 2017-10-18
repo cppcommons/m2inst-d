@@ -83,6 +83,16 @@ void main() {
 		}
 		writeln("10");
 
+		WinHttpReceiveResponse(hRequest, NULL);
+		writeln("11");
+
+		DWORD dwSizeWithZero = 0; //unit = sizeof(wchar_t)
+		WinHttpQueryHeaders(hRequest, WINHTTP_QUERY_RAW_HEADERS_CRLF, WINHTTP_HEADER_NAME_BY_INDEX, NULL, &dwSizeWithZero, WINHTTP_NO_HEADER_INDEX);
+		wchar[] headerZ;
+		headerZ.length = dwSizeWithZero;
+		WinHttpQueryHeaders(hRequest, WINHTTP_QUERY_RAW_HEADERS_CRLF, WINHTTP_HEADER_NAME_BY_INDEX, cast(wchar *)headerZ, &dwSizeWithZero, WINHTTP_NO_HEADER_INDEX);
+		writeln(headerZ[0 .. wcslen(cast(wchar *)headerZ)]);
+		writeln("12");
 
 
 	}
