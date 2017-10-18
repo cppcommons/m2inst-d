@@ -1,0 +1,1 @@
+implib winhttp-dm32.lib C:\Windows\SysWOW64\winhttp.dll
