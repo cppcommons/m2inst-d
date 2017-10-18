@@ -1,0 +1,43 @@
+-------------------------
+Introduction
+-------------------------
+
+The Jx9 interpreter is a simple, basic standalone Jx9 interpreter that allows
+the user to enter and execute Jx9 files against a Jx9 engine. 
+To start the jx9 program, just type "jx9" followed by the name of the Jx9 file
+to compile and execute. That is, the first argument is to the interpreter, the rest
+are scripts arguments, press "Enter" and the Jx9 code will be executed.
+If something goes wrong while processing the Jx9 script due to a compile-time
+error, your error output (STDOUT) should display the compile-time error messages.
+
+Usage example of the jx9 interpreter:
+
+Running the interpreter
+jx9 scripts/hello_world.jx9.txt
+Running the interpreter with script arguments
+jx9 scripts/mp3_tag.jx9.txt /usr/local/path/to/my_mp3s
+
+The Jx9 interpreter package includes more than 40 Jx9 scripts to test ranging
+from simple hello world programs to ZIP archive extracting, MP3 tag 
+extracting, JSON encoding/decoding, INI processing, UTF-8 encoding/decoding
+and many more. These scripts are available in the scripts directory
+of the zip archive.
+
+------------------------
+ Compile from source
+------------------------
+
+To compile the Jx9 interpreter from source, you need the latest release of Jx9
+from http://jx9.symisc.net/downloads.html
+After that, invoke your favourite compiler and generate the executable as follows:
+     gcc -W -Wall -O6 -o jx9 jx9_interp.c jx9.c -D JX9_ENABLE_MATH_FUNC -lm
+Don't forget to compile Jx9 with built-in math function [i.e: sqrt(), abs(), etc.]
+using the JX9_ENABLE_MATH_FUNC compile-time directive.
+Finally, don't forget to compile with full optimizations enabled.
+
+For an introduction to the JX9 C/C++ interface, please refer to this page
+        http://jx9.symisc.net/api_intro.html
+For the full C/C++ API reference guide, please refer to this page
+        http://jx9.symisc.net/c_api.html
+For the full JX9 language reference manual, please refer to this page
+        http://jx9.symisc.net/jx9_lang.html

@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en"><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type"><title>Jx9 - An Embeddable Scripting Engine</title><!-- Copyright (C) 2011 Symisc Systems,http://www.symisc.net contact@symisc.net -->
+  
+
+  
+
+  
+  <link rel="stylesheet" href="symisc.css" type="text/css">
+
+  
+  <meta content="Symisc Systems &lt;chm@symisc.net&gt;" name="author">
+  <meta content="http://jx9.symisc.net/" name="description"></head><body>
+<div style="width: 1092px;" id="main_div"><a href="http://jx9.symisc.net/"><img style="border: 0px solid ; width: 170px; height: 70px;" alt="Jx9 Scripting Engine" title="Jx9 Scripting Engine" src="images/symisc-jx9.png"></a><br>
+<div style="text-align: left; width: 1080px;" align="right">
+<table style="text-align: left; width: 1075px;" border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 709px;"><small style="color: black; font-family: Verdana;"><small><br>
+An Embeddable Scripting Engine</small></small></td>
+      <td style="vertical-align: top; width: 162px;"><br><a href="https://twitter.com/share" class="twitter-share-button" data-via="jx9_engine" data-size="large">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
+      <td style="vertical-align: top; width: 176px;"><br><a href="https://twitter.com/jx9_engine" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @jx9_engine</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
+    </tr>
+  </tbody>
+</table></div><hr style="width: 100%; height: 2px;">
+<ul id="nav">
+  <li id="nav-1"><a href="index.html">About</a></li>
+<li id="nav-8"><a href="features.html">Distinctive Features<br>
+</a></li>
+  <li id="nav-2"><a href="intro.html">Getting Started<br>
+    </a></li>
+  <li id="nav-3"><a href="c_api.html">Documentation<br>
+    </a></li>
+  <li id="nav-4"><a href="downloads.html">Downloads<br>
+    </a></li>
+  <li id="nav-5"><a href="licensing.html">Licensing<br>
+    </a></li>
+  <li id="nav-6"><a href="faq.html">FAQ<br>
+    </a></li>
+  <li id="nav-7"><a href="support.html">Online Support<br>
+    </a></li>
+</ul>
+<h1 style="font-family: Verdana;"><font style="font-size: 10pt;" size="2">About jx9</font><small><small><b>.</b></small></small></h1><div>
+<p style="font-weight: normal; font-family: Arial;" align="left">
+</p>
+<p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Jx9
+is an embeddable scripting engine that implements a <a href="http://en.wikipedia.org/wiki/Turing_completeness">Turing
+complete</a> programming language based on <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>.</font></font></p>
+
+<br>
+
+<p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Jx9
+is the ideal library to use in applications that require modern
+and efficient scripting support such as games, database systems, text
+editors, network applications and so forth. Jx9 borrows concepts from <a href="http://lua.org/">Lua</a>,
+but uses a clean and familiar syntax similar to C, JavaScript and JSON with a rich <a href="builtin_func.html">standard library</a> built with over <span style="font-weight: bold;">303 functions</span> and <span style="font-weight: bold;">139 constants</span>,
+making it more accessible to programmers. Jx9 also natively supports
+multi-threading and the concept of separate engine handles and
+virtual machines. </font></font>
+</p>
+
+
+
+<p style="margin-bottom: 0cm;" lang="en-US"><br>
+</p>
+
+<p align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">As
+an embedded interpreter, it allows multiple interpreter states to
+coexist in the same program, without interference between them.
+Programmatically, <a href="func_intro.html">foreign
+functions</a> in C/C++ as well <a href="const_intro.html">foreign
+constants</a> can be added and <a href="c_api_func.html#vm_config_create_var">variables</a> can be defined or modified in the Jx9
+environment. Being a quite small program, it is easy to comprehend,
+get to grips with, and use. </font></font><font style="font-style: italic;" face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span lang="en-US">Jx9
+features includes:</span></font></font><br>
+
+</p>
+
+<p style="font-weight: normal; font-family: Arial;" align="left"></p>
+
+
+<table style="text-align: left; width: 1092px;" border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 724px;">
+      <div style="margin-top: 33px; height: 269px;" id="code"><ul>
+        <li><p style="margin-bottom: 0cm;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Easy to bind C/C++ <a href="func_intro.html">foreign functions</a> as well <a href="const_intro.html">foreign constants</a>.</font></font></p></li>
+        <li><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><a href="http://en.wikipedia.org/wiki/Turing_completeness">Turing
+complete</a> programming language based on <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>.</font></font></li>
+        <li><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Modern, clean and easy to use <a href="c_api.html">C/C++ API</a>.</font></font></li>
+        <li><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Clean and familiar syntax similar to C, JavaScript and JSON</font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif">.</font></font></font></li>
+        <li><p style="margin-bottom: 0cm;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif"><a href="c_api_const.html#compile_time">Thread safe</a> and full reentrant.</font></font></font></p></li>
+        <li><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif">Dynamically typed programming language.</font></font></font></li>
+        <li><p style="margin-bottom: 0cm;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif">Highly efficient
+	and platform independent <a href="c_api_object.html#jx9_vm">Bytecode
+	compiler</a>.</font></font></font></p></li>
+        <li><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif">Function overloading like C++.</font></font></font></li>
+        <li><p style="margin-bottom: 0cm;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif">Built-in
+	HTTP Request Parser.</font></font></font></p></li>
+        <li><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif">Native support for Anonymous functions.</font></font></font></li>
+        <li><p style="margin-bottom: 0cm;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Amalgamation:
+	All C source code for Jx9 are combined into a single source file.</font></font></p></li>
+        <li><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Jx9 is an <a href="licensing.html">Open Source</a> product.</font></font>
+          <div style="text-align: right;">&nbsp; <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Refer to the <a href="features.html">feature page</a> for a detailed description.<br>
+</font></font></div>
+        </li>
+</ul>
+        
+          
+      <ul>
+
+      </ul>
+</div>
+      </td>
+      <td style="vertical-align: top; width: 348px;">
+      <table style="text-align: left; width: 348px; margin-left: 24px; height: 248px;" border="0" cellpadding="2" cellspacing="2">
+        <tbody>
+          <tr align="right">
+            <td style="vertical-align: top; width: 314px;"><a href="../../ph7/src/website/downloads.html">
+            </a>
+            <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif"><font size="1"><b>Current
+Public Release: <a href="downloads.html">1.7.2</a></b></font></font></font></font></font></p>
+
+            </td>
+          </tr>
+          <tr align="center">
+            <td style="vertical-align: top; width: 314px; text-align: right;"><a href="http://opensource.org/docs/definition.php"><img style="border: 0px solid ; width: 240px; height: 275px;" alt="Open Source Software" title="Open Source Software" src="images/osi_standard_logo.png"></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-weight: normal;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Jx9
+is </font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">100% hand-coded, </font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">written in ANSI C, <a style="font-weight: bold;" href="c_api_const.html#compile_time">thread-safe</a>, <a href="c_api_const.html#compile_time">full reentrant</a>,
+compiles unmodified and should run in any platform including
+restricted embedded devices with a C compiler. Jx9 is extensively
+tested on Windows and UNIX systems especially Linux, FreeBSD, Oracle
+Solaris and Mac OS X.</font></font></p>
+<p style="font-weight: normal;" align="left"><br>
+</p>
+<p style="font-weight: normal;" align="left">
+</p>
+<p style="margin-bottom: 0cm;" align="left">
+</p>
+<p style="margin-bottom: 0cm;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Being
+an extension language, Jx9 has no notion of a </font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><i>main</i></font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+program, it only works </font></font><em><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">embedded</font></font></em><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+in a host </font></font><em><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-style: normal;">application</span></font></font></em><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">. Jx9
+is a compact library, with all features enabled, the library size can
+be less than 421 KiB, depending on compiler optimization settings.
+(Some compiler optimizations such as aggressive function inlining and
+loop unrolling can cause the object code to be much larger).</font></font></p>
+<p style="margin-bottom: 0cm;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"> If
+optional features are omitted, the size of the Jx9 library can be
+reduced below 220 KiB. Jx9 can also be made to run in very little heap
+(2MB), making Jx9 a popular scripting choice on memory
+constrained gadgets such as cellphones, tablets, numeric devices and
+so on.</font></font></p>
+
+
+<p style="margin-bottom: 0cm;" align="left"><br>
+</p>
+
+<p style="margin-bottom: 0cm;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Jx9
+is an open source, dual licensed product available free of charge for
+open source projects under the term of the <a href="http://symisc.net/spl.txt">Symisc
+Public License </a>(SPL) which is a GPL compatible license and is
+</font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><b>equivalent</b></font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+to the more popular <a href="http://opensource.org/licenses/Sleepycat">Sleepycat
+license</a> (An OSI approved license). See the <a href="licensing.html">licensing
+page</a> for additional information.</font></font></p>
+
+
+
+<h1 style="text-align: left;"><small><small><font face="Verdana, sans-serif"><b>Jx9 Programming Interfaces.<br>
+</b></font></small></small></h1>
+<small><small></small></small>
+<div style="text-align: left; margin-left: 56px; width: 835px;">
+<p style="margin-bottom: 0cm;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">Documentation
+describing the APIs used to program Jx9. Note that Jx9</span></font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+is very easy to learn, even for new programmer.</font></font></p>
+<p style="margin-bottom: 0cm;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"> Here is some useful
+links to start with:</font></font></p>
+<p style="margin-bottom: 0cm;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+</font></font></p>
+
+<table style="text-align: left; height: 242px; width: 826px;" border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 373px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;"><a style="font-weight: bold;" href="intro.html">Jx9 In 5 Minutes Or Less<br>
+</a></span></font></font></td>
+      <td style="vertical-align: top; width: 19px;"><br>
+      </td>
+      <td style="vertical-align: top; width: 323px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">Gives a
+high-level overview on the how to embed Jx9 in a
+host application with working examples implemented in C.</span></font></font></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 373px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;"><a style="font-weight: bold;" href="api_intro.html">An
+Introduction To The Jx9 C/C++ Interface</a></span></font></font></td>
+      <td style="vertical-align: top; width: 19px;"><br>
+      </td>
+      <td style="vertical-align: top; width: 323px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">Gives an overview and
+roadmap to the C/C++ interface to Jx9.</span></font></font></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;"><a style="font-weight: bold;" href="jx9_lang.html">The Jx9 Programming Language</a><br>
+      <br>
+</span></font></font></td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><font face="Verdana, sans-serif"><font size="2">The
+Jx9 programming language reference manual.</font></font></td>
+    </tr>
+<tr>
+      <td style="vertical-align: top; width: 373px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;"><a style="font-weight: bold;" href="c_api.html">C/C++&nbsp;API&nbsp;Reference
+Guide</a><br>
+      <br>
+</span></font></font></td>
+      <td style="vertical-align: top; width: 19px;"><br>
+      </td>
+      <td style="vertical-align: top; width: 323px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">This document describes each API function
+in details.</span></font></font></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 373px;"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif"><span style="font-weight: normal;"><a style="font-weight: bold;" href="func_intro.html">Foreign
+Function Implementation</a></span></font></font></td>
+      <td style="vertical-align: top; width: 19px;"><br>
+      </td>
+      <td style="vertical-align: top; width: 323px;"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif"><span style="font-weight: normal;">Is
+a howto guide on how to create and install foreign functions typically
+implemented in C/C++ and how to invoke them from your Jx9 script.</span></font></font></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 373px;"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif"><span style="font-weight: normal;"><a style="font-weight: bold;" href="const_intro.html">Constant
+Expansion Mechanism</a></span></font></font></td>
+      <td style="vertical-align: top; width: 19px;"><br>
+      </td>
+      <td style="vertical-align: top; width: 323px;"><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif"><span style="font-weight: normal;">Is a howto guide on how to install foreign constants </span></font></font><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif"><span style="font-weight: normal;">typically implemented in C/C++ </span></font></font><font style="font-size: 10pt;" size="2"><font face="Verdana, sans-serif"><span style="font-weight: normal;">and how to expand their values from your Jx9 script.</span></font></font></td>
+    </tr>
+  </tbody>
+</table>
+<p style="margin-left: 1.25cm; margin-bottom: 0cm;" align="left"> </p>
+</div>
+
+<br>
+<h1 style="text-align: left;"><small><small><font face="Verdana, sans-serif"><b>Other Useful links.</b></font></small></small></h1>
+<div style="text-align: left; margin-left: 59px; width: 735px;">
+<table style="text-align: left; margin-left: auto; margin-right: auto; width: 733px;" border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 216px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><a style="font-weight: bold;" href="downloads.html">Download</a></font></font></td>
+      <td style="vertical-align: top; width: 32px;"><br>
+      </td>
+      <td style="vertical-align: top; width: 410px; font-family: Verdana;"><font style="font-size: 10pt;" size="2">Get a copy of the last public
+release of the Jx9 scripting engine, start embedding and enjoy
+programming with.<br>
+      </font></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 216px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;"><a style="font-weight: bold;" href="features.html">Distinctive&nbsp;Features</a></span></font></font></td>
+      <td style="vertical-align: top; width: 32px;"><br>
+      </td>
+      <td style="vertical-align: top; width: 410px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">This document enumerates and describes
+some of the features and the
+powerfull extensions introduced by Jx9.<br>
+      </span></font></font></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 216px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;"><a style="font-weight: bold;" href="faq.html">Frequently&nbsp;Asked&nbsp;Questions</a></span></font></font></td>
+      <td style="vertical-align: top; width: 32px;"><br>
+      </td>
+      <td style="vertical-align: top; width: 410px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">FAQ: The
+title of the document says all...<br>
+      <br>
+      </span></font></font></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 216px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;"><a style="font-weight: bold;" href="licensing.html">Copyright/Licensing</a></span></font></font></td>
+      <td style="vertical-align: top; width: 32px;"><br>
+      </td>
+      <td style="vertical-align: top; width: 410px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">Jx9 is dual-licensed and is available
+free of charge for open source
+projects. Find more on the licensing situation there.<br>
+      </span></font></font></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;"><a style="font-weight: bold;" href="support.html">Online Community Support</a></span></font></font></td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; width: 410px;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">Need some help, join
+the Jx9 online
+community.</span></font></font></td>
+    </tr>
+  </tbody>
+</table>
+<p style="margin-bottom: 0cm; font-weight: normal;" align="left"> </p>
+</div>
+<br>
+</div>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: right; margin-top: 0px; height: 91px;"><small><small><a href="http://www.symisc.net/"><img style="border: 0px solid ; width: 170px; height: 70px;" alt="Symisc Systems" src="images/symisc.png"></a></small></small>
+<div style="text-align: left; margin-top: 0px; height: 14px;"><small><small style="font-family: Verdana;">Copyright © <a href="http://www.symisc.net/">Symisc Systems</a></small></small><br>
+</div>
+</div>
+</div>
+
+</body></html>

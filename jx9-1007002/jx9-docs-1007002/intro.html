@@ -1,0 +1,2147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en"><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type"><title>Jx9 In 5 Minutes Or Less</title><!-- Copyright (C) 2011 Symisc Systems,http://www.symisc.net contact@symisc.net -->
+  
+
+  
+
+  
+  <link rel="stylesheet" href="symisc.css" type="text/css">
+
+  
+  <meta content="Symisc Systems &lt;chm@symisc.net&gt;" name="author"></head><body>
+<div style="width: 1092px;" id="main_div"><a href="http://jx9.symisc.net/"><img style="border: 0px solid ; width: 170px; height: 70px;" alt="JX9 Scripting Engine" title="JX9 Scripting Engine" src="images/symisc-jx9.png"></a><br>
+<div style="text-align: left; width: 1080px;" align="right">
+<table style="text-align: left; width: 1075px;" border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 709px;"><small style="color: black; font-family: Verdana;"><small><br>
+An Embeddable Scripting Engine</small></small></td>
+      <td style="vertical-align: top; width: 162px;"><br><a href="https://twitter.com/share" class="twitter-share-button" data-via="jx9_engine" data-size="large">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
+      <td style="vertical-align: top; width: 176px;"><br><a href="https://twitter.com/jx9_engine" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @jx9_engine</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
+    </tr>
+  </tbody>
+</table></div>
+<hr style="width: 100%; height: 2px;">
+<ul id="nav">
+  <li id="nav-1"><a href="index.html">About</a></li>
+<li id="nav-8"><a href="features.html">Distinctive Features<br>
+</a></li>
+  <li id="nav-2"><a href="intro.html">Getting Started<br>
+    </a></li>
+  <li id="nav-3"><a href="c_api.html">Documentation<br>
+    </a></li>
+  <li id="nav-4"><a href="downloads.html">Downloads<br>
+    </a></li>
+  <li id="nav-5"><a href="licensing.html">Licensing<br>
+    </a></li>
+  <li id="nav-6"><a href="faq.html">FAQ<br>
+    </a></li>
+  <li id="nav-7"><a href="support.html">Online Support<br>
+    </a></li>
+</ul>
+<h1><small><small><font face="Verdana, sans-serif"><b>Jx9 in 5 minutes or less<br>
+</b></font></small></small></h1><div>
+<p style="font-weight: normal;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Here
+is what you do to start experimenting with the Jx9 scripting engine without
+having to do a lot of tedious reading and configuration:</font></font><small><small><font face="Verdana, sans-serif"><b><br>
+</b></font></small></small></p>
+<h1><small><small><font face="Verdana, sans-serif"><b>download The Code</b></font></small></small></h1>
+<p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Get
+a copy of the last public release of Jx9 (A single 1.3 MB C
+file). Visit the
+<a href="downloads.html">download page</a> for additional information.</font></font></p>
+<h1><small><font face="Verdana, sans-serif"><font style="font-size: 11pt;" size="2"><small><b>Write
+Programs That Use Jx9</b></small></font></font></small></h1>
+<p style="margin-bottom: 0cm;">
+</p>
+<p style="margin-bottom: 0.5cm; font-weight: normal;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Below
+is a simple C program that demonstrates how to use the <a href="c_api.html">C/C++
+interface</a> to Jx9. This program compile and execute the
+following Jx9 scripts.</font></font></p>
+<div style="text-align: left; margin-left: 68px; width: 550px;" id="code"><small><span style="color: green;">// Declare a JSON object and assign it to the variable $my_data</span></small><br>
+<small> $my_data = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green;"> // Greeting message </span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">greeting</span> : <span style="color: red;">"Hello world!\n"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: green;">// Dummy field </span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">__id</span> : 1,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: green;">// Host Operating System</span> <br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">os_name</span>: <a href="builtin_func.html">uname</a>(), </small><small><span style="color: green;">//Built-in OS function</span> </small><br>
+<small>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: green;">// Current date</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">date</span> : __DATE__,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: green;">// Return the current time using an anonymous function</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">time</span> : <span style="color: blue;">function</span>(){ <span style="color: blue;">return</span> __TIME__; }<br>
+&nbsp;};<br>
+<span style="color: green;">// invoke JSON object members</span><br>
+<span style="color: blue;">print</span> $my_data.greeting; </small><small><span style="color: green;">//Hello world!</span></small><br>
+<small>
+<span style="color: blue;">print</span> <span style="color: red;">"Host Operating System: "</span>, $my_data.os_name, JX9_EOL;<br>
+<span style="color: blue;">print</span> <span style="color: red;">"Current date: "</span>, $my_data.date, JX9_EOL;<br>
+<span style="color: blue;">print</span> <span style="color: red;">"Current time: "</span>, $my_data.time(); <span style="color: green;">// Anonymous function</span> <br style="font-family: Verdana;">
+<span style="font-family: Verdana;"></span></small><br>
+</div>
+<p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+</font></font></p>
+<p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">That
+is, this simple Jx9 script when running should display a greeting
+message, the current system time and the host operating system. A
+typical output of this program would look like this:</font></font></p>
+<p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"></font></font><br>
+</p>
+
+<div style="margin-left: 70px; width: 543px;" id="code"><font style="font-size: 10pt;" size="2">
+Hello world!<br>
+Host Operating System:&nbsp; Microsoft Windows 7 localhost 6.1 build 7600 x86<br>
+Current date: 2012-12-27<br>
+Current time: 10:36:02</font><br>
+</div>
+<font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+</font></font>
+<p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">Another
+Jx9 script that demonstrate how to use the <a href="builtin_func.html">built-in</a>
+IO facility.</font></font></p>
+
+<br>
+<div style="text-align: left; margin-left: 68px; width: 550px;" id="code"><small><span style="color: green;"><span style="color: black;"><span style="color: green;">//Declare an empty JSON array</span><br>
+$num = [];<br>
+<br>
+<span style="color: blue;">print</span> <span style="color: red;">"Enter a number (Decimal, Hex, Octal or Binary notation)\n"</span>;<br>
+<span style="color: green;">//Populate the JSON array with the first entry</span><br>
+$num[] = (int)<a href="builtin_func.html">fgets</a>(<a href="builtin_func.html#const">STDIN</a>);<br>
+<br>
+<span style="color: blue;">print</span> <span style="color: red;">"Another number\n"</span>;<br>
+$num[] = (int)<a href="builtin_func.html">fgets</a>(<a href="builtin_func.html#const">STDIN</a>);<br>
+<br>
+<span style="color: blue;">print</span> <span style="color: red;">"Finally, one last number\n"</span>;<br>
+$num[] = (int)<a href="builtin_func.html">fgets</a>(<a href="builtin_func.html#const">STDIN</a>);<br>
+<br>
+<span style="color: green;">//show content</span><br>
+<span style="color: blue;">print</span> <span style="color: red;">"Before sorting\n"</span>;<br>
+<span style="color: blue;">print</span> $num;<br>
+<br>
+<span style="color: green;">//Sort the array now</span><br>
+<a href="builtin_func.html">sort</a>($num);<br>
+<span style="color: blue;">print</span> <span style="color: red;">"\nAfter sorting\n"</span>;<br>
+<span style="color: blue;">print</span> $num;<br style="font-family: Verdana;">
+</span></span></small><small>
+<span style="font-family: Verdana;"></span></small><br>
+</div>
+
+<p style="margin-bottom: 0.5cm; font-weight: normal;" align="left">
+</p>
+<p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">This
+simple Jx9 script ask for three numbers (64 bit integers)
+from the standard input (STDIN), store the given numbers in a JSON
+array, perform a merge-sort using the <a href="builtin_func.html">built-in</a>
+sort function and output the sorted array. </font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">A
+typical output of this program would look like this:</font></font></p>
+<p style="margin-bottom: 0cm;" lang="en-US"><br>
+</p>
+<div style="margin-left: 70px; width: 543px;" id="code"><font style="font-size: 10pt;" size="2"></font><small>Enter a number<br>
+&nbsp;<span style="font-weight: bold;">50232</span><br>
+Another number<br>
+&nbsp; <span style="font-weight: bold;">80</span><br>
+Finally, one last number<br>
+&nbsp; <span style="font-weight: bold;">0xff</span><br>
+Before sorting<br>
+&nbsp; <span style="font-weight: bold;">[50232,80,255]</span><br>
+After sorting<br>
+&nbsp; <span style="font-weight: bold;">[80,255,50232]</span></small><br>
+</div>
+<br>
+<p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">&nbsp;An implementation of the famous factorial function in Jx9.<br>
+</font></font><br>
+</p>
+
+<div style="margin-left: 70px; width: 543px;" id="code"><small></small>
+<p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">print</font>
+<font color="#ff0000">"Enter a number\n"</font>;</font></font></p>
+
+<p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">$num
+= <font color="#0000ff">(int)</font>fgets(STDIN);</font></font></p>
+<p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+</font></font></p>
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">function</font>
+factorial(<font color="#0000ff">int</font> $num)</font></font></p>
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">{</font></font></p>
+
+<p>&nbsp;  <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">if</font>(
+ $num == 0 || $num == 1 )</font></font></p>
+
+<p>&nbsp;&nbsp;&nbsp;     <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">return</font>
+1;</font></font></p>
+
+<p>&nbsp;   <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">else</font></font></font></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;      <font color="#0000ff"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">return</font></font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+$num</font></font><code class="western"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+* factorial($num – 1);</font></font></code><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+</font></font>
+</p>
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">}</font></font></p>
+
+<p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">print</font>
+<font color="#ff0000">"Facorial of $num = "</font>..factorial($num);</font></font></p>
+
+
+</div>
+<p style="margin-bottom: 0cm;" lang="en-US">
+</p>
+
+<small><span style="font-weight: bold;"></span></small>
+<p style="margin-bottom: 0cm;" lang="en-US"><br>
+</p>
+
+<p style="margin-bottom: 0cm;" lang="en-US">
+</p>
+<p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">One
+final Jx9 script that demonstrate how Jx9
+can be used for processing external configuration file based on JSON
+using the built-in <a href="builtin_func.html">json_encode() </a>and
+<a href="builtin_func.html">json_decode()</a> functions.</font></font></p>
+<p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2"><br>
+</font></font></p>
+
+<p style="margin-bottom: 0cm;" lang="en-US">
+</p>
+
+<div style="margin-left: 70px; width: 543px;" id="code"><small><span style="color: green;">// ---------------------- config_writer.jx9 ----------------------------</span></small><br>
+<small><span style="color: green;"><br>
+// Create a dummy configuration using a JSON object</span><br>
+$my_config =&nbsp; {<br>
+&nbsp; bind_ip : <span style="color: red;">"127.0.0.1"</span>,<br>
+&nbsp; config : <span style="color: red;">"/etc/symisc/jx9.conf"</span>,<br>
+&nbsp; dbpath : <span style="color: red;">"/usr/local/unqlite"</span>,<br>
+&nbsp; fork : true,<br>
+&nbsp; logappend : true,<br>
+&nbsp; logpath : <span style="color: red;">"/var/log/jx9.log"</span>,<br>
+&nbsp; quiet : true,<br>
+&nbsp; port : 8080<br>
+&nbsp;};<br>
+<span style="color: green;"><br>
+// Dump the JSON object</span><br>
+<span style="color: blue;">print</span> $my_config;<br>
+<br>
+<span style="color: green;">// Write to disk</span><br>
+$file = <span style="color: red;">"config.json.txt"</span>;<br>
+<span style="color: blue;">print</span> <span style="color: red;">"\n\n------------------\nWriting JSON object to disk file: '$file'\n"</span>;<br>
+<span style="color: green;"><br>
+// Create the file</span><br>
+$fp = <a href="builtin_func.html">fopen</a>($file,<span style="color: red;">'w+'</span>);<br>
+<span style="color: blue;">if</span>( !$fp )<br>
+&nbsp;&nbsp;&nbsp; <a href="builtin_func.html">exit</a>(<span style="color: red;">"Cannot create $file"</span>);<br>
+<span style="color: green;"><br>
+// Write the JSON object</span><br>
+<a href="builtin_func.html">fwrite</a>($fp,$my_config);<br>
+<span style="color: green;"><br>
+// Close the file</span><br>
+<a href="builtin_func.html">fclose</a>($fp);<br>
+<span style="color: green;"><br>
+// All done</span><br>
+<span style="color: blue;">print</span> <span style="color: red;">"$file successfully created on: "</span>..__DATE__..' '..__TIME__;<span style="font-weight: bold;"></span></small><br>
+<small><span style="color: green;"><br>
+// ---------------------- config_reader.jx9 ----------------------------</span></small><br>
+<small><span style="color: green;"><br>
+// Read the configuration file defined above</span><br>
+$iSz = <a href="builtin_func.html">filesize</a>($zFile); <span style="color: green;">// Size of the whole file</span><br>
+$fp = <a href="builtin_func.html">fopen</a>($zFile,<span style="color: red;">'r'</span>); <span style="color: green;">// Read-only mode</span><br>
+<span style="color: blue;">if</span>( !$fp ){<br>
+&nbsp;&nbsp; <a href="builtin_func.html">exit</a>(<span style="color: red;">"Cannot open '$zFile'"</span>);<br>
+}<br>
+<span style="color: green;"><br>
+// Read the raw content</span><br>
+$zBuf = <a href="builtin_func.html">fread</a>($fp,$iSz);<br>
+<span style="color: green;"><br>
+// decode the JSON object now</span><br>
+$my_config = <a href="builtin_func.html">json_decode</a>($zBuf);<br>
+<span style="color: blue;">if</span>( !$my_config ){<br>
+&nbsp;&nbsp;&nbsp; print <span style="color: red;">"JSON decoding error\n"</span>;<br>
+}<span style="color: blue;">else</span>{<br>
+&nbsp; <span style="color: green;">// Dump the JSON object</span><br>
+&nbsp; <span style="color: blue;">foreach</span>( $my_config <span style="color: blue;">as</span> $key,$value ){<br>
+&nbsp;&nbsp; <span style="color: blue;">print</span> <span style="color: red;">"$key ===&gt; $value\n"</span>;<br>
+&nbsp; }<br>
+}<br>
+<span style="color: green;"><br>
+// Close the file</span><br>
+<a href="builtin_func.html">fclose</a>($fp);<br>
+</small>
+</div>
+
+<p style="margin-bottom: 0.5cm; font-weight: normal;" align="left">
+</p>
+<p style="margin-bottom: 0cm;" lang="en-US">
+</p>
+<p><font face="Verdana, sans-serif"><font size="2">The first script
+generate a JSON object holding some dummy configuration fields,
+create a disk file named config.json.txt using the built-in <a href="builtin_func.html">fopen()</a>
+function and finally serialize the JSON object to disk using the
+<a href="builtin_func.html">fwrite()</a> function. While the second
+script perform the reverse operation using the <a href="builtin_func.html">fread()</a>
+and <a href="builtin_func.html">json_decode()</a> functions.</font></font></p>
+
+<p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">As
+you can see, Jx9 is a powerful programming language with a friendly
+and familiar syntax with a rich <a href="builtin_func.html">standard
+library</a> built with over 303 functions and 139 <a href="builtin_func.html#const">constants</a>
+suitable for most purposes. Refer to the <a href="jx9_lang.html">Jx9
+Language Reference Manual</a> for additional information. </font></font>
+</p>
+
+
+<h1><small><font><font><small><b><small><font face="Verdana, sans-serif"><font size="3"><small><b>Embedding Jx9 using the C/C++ API</b></small></font></font></small></b></small></font></font></small></h1>
+
+<p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">Embedding
+Jx9 in a C/C++ host application is relatively easy. The three Jx9
+scripts defined above can be embedded in an application with the same
+C/C++ interfaces. That is, this simple C program could be used to
+compile and execute all the Jx9 scripts defined above.</font></font></p>
+
+<br>
+<br>
+
+<div style="margin-left: 71px; width: 787px;" id="code" dir="ltr">
+
+<ol>
+<li><p style="margin-bottom: 0cm;" lang="en-US"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	Compile this file together with the jx9 scripting engine source code
+	to generate</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	the executable. For example: </font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	 gcc -W -Wall -O6 -o test jx9_intro.c jx9.c</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*/</font></font></font></p></li>
+  <li><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+    </font></font></font></li>
+<li><p style="margin-bottom: 0cm;" lang="en-US"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*
+	Make sure you have the latest release of the JX9 engine</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	from:</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	 http://jx9.symisc.net/downloads.html</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">#include</font><font color="#000000">
+	</font><font color="#a31515">&lt;stdio.h&gt;</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">#include</font><font color="#000000">
+	</font><font color="#a31515">&lt;stdlib.h&gt;</font></font></font></p>
+	</li><li><br>
+</li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*
+	Make sure this header file is available.*/</font></font></font></p>
+
+	</li>
+<li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">#include</font><font color="#000000">
+	</font><font color="#a31515">"jx9.h"</font></font></font></p>
+	</li><li><br>
+</li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*
+	</font></font></font>
+	</p>
+
+	</li>
+<li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	Display an error message and exit.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">static</font><font color="#000000">
+	</font><font color="#0000ff">void</font><font color="#000000">
+	Fatal(</font><font color="#0000ff">const</font><font color="#000000">
+	</font><font color="#0000ff">char</font><font color="#000000">
+	*zMsg)</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">{</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp; puts(zMsg);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;	</font><font color="#008000">/*
+	Shutdown the library */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	jx9_lib_shutdown();</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;	</font><font color="#008000">/*
+	Exit immediately */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	exit(0);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">}</font></font></font></p></li>
+  <li><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+    </font></font></font></li>
+<li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	VM output consumer callback.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	Each time the virtual machine generates some outputs, the following</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	function gets called by the underlying virtual machine to consume</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	the generated output.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	All this function does is redirecting the VM output to STDOUT.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	This function is registered later via a call to jx9_vm_config()</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	with a configuration verb set to: JX9_VM_CONFIG_OUTPUT.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">static</font><font color="#000000">
+	</font><font color="#0000ff">int</font><font color="#000000">
+	Output_Consumer(</font><font color="#0000ff">const</font><font color="#000000">
+	</font><font color="#0000ff">void</font><font color="#000000">
+	*pOutput, </font><font color="#0000ff">unsigned</font><font color="#000000">
+	</font><font color="#0000ff">int</font><font color="#000000">
+	nOutputLen, </font><font color="#0000ff">void</font><font color="#000000">
+	*pUserData </font><font color="#008000">/* Unused */</font><font color="#000000">)</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">{</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	</font><font color="#008000">/*
+	</font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+	* Note that it's preferable to use the write() system call to
+	display the output</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+	* rather than using the libc printf() which everybody now is
+	extremely slow.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+	*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;	printf(</font><font color="#a31515">"%.*s"</font><font color="#000000">,
+	</font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		nOutputLen,
+	</font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		(</font><font color="#0000ff">const</font><font color="#000000">
+	</font><font color="#0000ff">char</font><font color="#000000">
+	*)pOutput </font><font color="#008000">/* Not null terminated */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;		);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;	</font><font color="#008000">/*
+	All done, VM output was redirected to STDOUT */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;	</font><font color="#0000ff">return</font><font color="#000000">
+	JX9_OK;</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">}</font></font></font></p></li>
+  <li><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+    </font></font></font></li>
+<li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*
+	</font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	Main program: Compile and execute the JX9 program defined above.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">int</font><font color="#000000">
+	main(</font><font color="#0000ff">void</font><font color="#000000">)</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">{</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp; <a href="c_api_object.html#jx9"><span style="font-weight: bold;">jx9</span></a>
+	*pEngine; </font><font color="#008000">/* JX9 engine handle*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	<a href="c_api_object.html#jx9_vm"><span style="font-weight: bold;">jx9_vm</span></a>
+	*pVm;  </font><font color="#008000">/* Compiled JX9 program */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp; </font><font color="#0000ff">int</font><font color="#000000">
+	rc;</font></font></font></p>
+	</li><li>
+	<br>
+</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	</font><font color="#008000">/*
+	Allocate a new jx9 engine instance */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	rc
+	= jx9_init(&amp;pEngine);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	</font><font color="#0000ff">if</font><font color="#000000">(
+	rc != JX9_OK ){</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;		</font><font color="#008000">/*</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;		
+	* If the supplied memory subsystem is so sick that we are unable</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;		
+	* to allocate a tiny chunk of memory, there is no much we can do
+	here.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;		
+	*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;		Fatal(</font><font color="#a31515">"Error
+	while allocating a new JX9 engine instance"</font><font color="#000000">);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	}</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+	<br>
+</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+	<br>
+</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp; </font><font color="#008000">/*
+	Compile the test program defined above */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	rc
+	= jx9_compile(pEngine,JX9_PROG,</font><font color="#000000">-1,&amp;pVm);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	</font><font color="#0000ff">if</font><font color="#000000">(
+	rc != JX9_OK ){</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;		</font><font color="#0000ff">if</font><font color="#000000">(
+	rc == JX9_COMPILE_ERR ){</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;			</font><font color="#0000ff">const</font><font color="#000000">
+	</font><font color="#0000ff">char</font><font color="#000000">
+	*zErrLog;</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;			</font><font color="#0000ff">int</font><font color="#000000">
+	nLen;</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;			</font><font color="#008000">/*
+	Extract error log */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;			jx9_config(pEngine,
+	</font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				JX9_CONFIG_ERR_LOG,
+	</font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				&amp;zErrLog,
+	</font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				&amp;nLen</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;				);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;			</font><font color="#0000ff">if</font><font color="#000000">(
+	nLen &gt; 0 ){</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				</font><font color="#008000">/*
+	zErrLog is null terminated */<br>
+</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts(zErrLog);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;			}</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;		}</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;		</font><font color="#008000">/*
+	Exit */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;		Fatal(</font><font color="#a31515">"Compile
+	error"</font><font color="#000000">);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	}</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+	<br>
+</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+	<br>
+</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font><font color="#008000">/*</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	
+	* Now we have our script compiled, it's time to configure our VM.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	
+	* We will install the VM output consumer callback defined above</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	
+	* so that we can consume the VM output and redirect it to STDOUT.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	
+	*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	rc
+	= jx9_vm_config(pVm, </font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		JX9_VM_CONFIG_OUTPUT,
+	</font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Output_Consumer,
+	   </font><font color="#008000">/* Output Consumer callback */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		0
+	                  </font><font color="#008000">/* Callback private
+	data */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;		);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	</font><font color="#0000ff">if</font><font color="#000000">(
+	rc != JX9_OK ){</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Fatal(</font><font color="#a31515">"Error
+	while installing the VM output consumer callback"</font><font color="#000000">);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	}</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+	<br>
+</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+	<br>
+</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	</font><font color="#008000">/*</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+	* And finally, execute our program. Note that your output (STDOUT in
+	our case)</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+	* should display the result.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+	*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	jx9_vm_exec(pVm,
+	0);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+	<br>
+</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+	<br>
+</li><li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font color="#000000">	</font><font style="font-size: 10pt;" size="2">/*
+	All done, cleanup the mess left behind. */</font></font></font></p>
+
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;jx9_vm_release(pVm);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;jx9_release(pEngine);</font></font></font></p>
+	</li><li>
+	<br>
+</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	</font><font color="#0000ff">return</font><font color="#000000">
+	0;</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">}</font></font></font></p>
+</li>
+</ol>
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+</div><br>
+<p><font face="Verdana, sans-serif"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-style: normal;">We
+</span></font></font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">create
+a new Jx9 engine instance</font></font><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-style: normal;">
+using a call to </span></font></font></font><a href="c_api_func.html#jx9_init"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">jx9_init()</font></font></a><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-style: normal;">
+on line 62. This is often the first Jx9 API call that an application
+makes and is a prerequisite in order to compile Jx9 code using one of
+the compile interfaces.</span></font></font></font></font></p>
+
+
+<p><font face="Verdana, sans-serif"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-style: normal;"><br>
+</span></font></font></font></font></p>
+
+<p><font face="Verdana, sans-serif"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-style: normal;"><span style="font-weight: normal;">We
+compile our Jx9 test program on line 73 using the </span></span></font></font></font><a href="c_api_func.html#jx9_compile"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">jx9_compile</font></font></a><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-style: normal;"><b>
+</b></span></font></font></font><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-style: normal;"><span style="font-weight: normal;">interface.</span></span></font></font></font></font></p>
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+</font></font></p>
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">We
+</font></font><a href="c_api_func.html#jx9_vm_config"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">configure
+our Virtual Machine</font></font></a><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+on line 99 by setting a </font></font><a href="output_consumer.html"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">VM
+output consumer callback</font></font></a><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+named Output_Consumer()</font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">. All this callback does is redirecting the VM
+output to STDOUT using the libc printf() routine or the write() system
+call.</font></font></p>
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+</font></font></p>
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">And
+finally we execute our Jx9 program </font></font><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">on
+line 113 </span></font></font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">using
+a call to <a href="c_api_func.html#jx9_vm_exec">jx9_vm_exec()</a>.
+Your standard output (STDOUT) should display the result.<br>
+</font></font></p>
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000"><font face="Verdana, sans-serif"><span style="font-style: normal;"><span style="font-weight: normal;"><br>
+</span></span></font></font></font></font></p>
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000"><font face="Verdana, sans-serif"><span style="font-style: normal;"><span style="font-weight: normal;">Clean-up
+is done on line 117 and 118 respectively via calls to </span></span></font></font><a href="c_api_func.html#jx9_vm_release">jx9_vm_release()</a><font color="#000000"><font face="Verdana, sans-serif"><span style="font-style: normal;"><span style="font-weight: normal;">
+and </span></span></font></font><a href="c_api_func.html#jx9_release">jx9_release()</a><font color="#000000"><font face="Verdana, sans-serif"><span style="font-style: normal;"><span style="font-weight: normal;">.</span></span></font></font></font></font></p>
+<h1><small><font face="Verdana, sans-serif"><font size="3"><small><b>Compile
+the
+program</b></small></font></font></small></h1>
+<p align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">Compile
+the target C file</span></font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">
+together with the </span></font></font><a href="downloads.html"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">jx9
+engine source code</span></font></font></a><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">
+to generate the executable. For example: </span></font></font>
+</p>
+<p style="font-weight: bold; text-align: center;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+gcc
+-W -Wall -O6 -o jx9_test jx9_intro.c jx9.c</font></font></p>
+<h1><small><font><font><small><b><small><font face="Verdana, sans-serif"><font size="3"><small><b>Working Examples</b></small></font></font></small></b></small></font></font></small></h1>
+
+
+<ul>
+<p style="margin-bottom: 0cm;">
+  </p><ul><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><a href="http://symisc.net/downloads/jx9_intro.c">jx9_intro.c</a>:
+	Hello world from C using Jx9 (First script).</font></font></font></p><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><a href="http://symisc.net/downloads/jx9_terminal_io.c">jx9_terminal_io.c</a>:
+	Jx9 built-in IO facility from C (second script).</font></font></font></p><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><a href="http://symisc.net/downloads/jx9_json_config_write.c">jx9_json_config_write.c</a>:
+	JSON configuration writer (third script).</font></font></font></p><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><a href="http://symisc.net/downloads/jx9_json_config_read.c">jx9_json_config_read.c</a>:
+	JSON configuration reader (third script).</font></font></font></p><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Visit
+	the <a href="downloads.html">download page</a> for additional
+	working examples.</font></font></font></p></ul></ul>
+<h1 class="western" align="left"><small><font><font><small><b><small><font face="Verdana, sans-serif"><font size="3"><small><b>Sharing Data between the C Code and&nbsp; Jx9 Scripts.</b></small></font></font></small></b></small></font></font></small></h1>
+
+<p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">Sharing data between the host application and the target Jx9 script
+such as passing environments information, <a href="c_api_func.html#jx9_vm_config">command line</a> arguments or registering predefined variables
+such as your application name, copyright notice and so forth is
+relatively easy and is done via the <a href="c_api_func.html#vm_config_create_var">foreign variable</a> mechanism.</font></font></p>
+
+<p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">This
+simple Jx9 script output the content of some foreign variable decalred below.</font></font></p>
+
+<br>
+<div style="margin-left: 70px; width: 543px;" id="code"><small><span style="color: blue;">print</span> <span style="color: red;">"Showing foreign variable contents\n"</span>;<br>
+<span style="color: green;">//Scalar foreign variable named $my_app</span><br>
+<span style="color: blue;">print</span> <span style="color: red;">"\$my_app ="</span> , $my_app..JX9_EOL;<br>
+<span style="color: green;">//</span></small><small><span style="color: green;">foreign </span></small><small><span style="color: green;">JSON object named $my_data</span><br>
+<span style="color: blue;">print</span> <span style="color: red;">"\$my_data = "</span> , $my_data;<br>
+<span style="color: green;">//Dump command line arguments</span><br>
+<span style="color: blue;">if</span>( count($argv) &gt; 0 ){<br>
+&nbsp;<span style="color: blue;">print</span> <span style="color: red;">"\nCommand line arguments:\n"</span>;<br>
+&nbsp;<span style="color: blue;">print</span> $argv;<br>
+}<span style="color: blue;">else</span>{<br>
+&nbsp; <span style="color: blue;">print</span> <span style="color: red;">"\nEmpty command line"</span>;<br>
+}<br>
+<span style="color: green;">//Return a simple JSON object to the host application</span><br>
+$my_config = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: red;">"jx9_version"</span> : __JX9__,&nbsp; <span style="color: green;">//JX9 Engine version</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: red;">"time"</span> : __TIME__, <span style="color: green;">//Current time</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: red;">"date"</span> : __DATE__&nbsp; <span style="color: green;">//Current date</span><br>
+&nbsp;};<br>
+&nbsp;<span style="color: green;">//terminate the script</span><br>
+&nbsp;<span style="color: blue;">die</span>;<span style="font-weight: bold;"></span></small><br>
+</div>
+<br>
+
+
+
+
+
+
+<p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">The
+following C program demonstrate how data is shared between the host
+application and
+the running Jx9 script. The main() function defined below creates and
+install two
+foreign variables named respectively $my_app and $my_data. The first
+is a simple scalar
+value while the last is a complex JSON object. these foreign
+variables are made
+available to the running script using the <a href="c_api_func.html#jx9_vm_config">jx9_vm_config()</a> interface
+with a
+configuration verb set to <a href="c_api_func.html#vm_config_create_var">JX9_VM_CONFIG_CREATE_VAR</a>.</font></font></font></p>
+
+<br>
+<div style="margin-left: 71px; width: 842px;" id="code" dir="ltr">
+
+<ol><li><p style="margin-bottom: 0cm;" lang="en-US"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	Compile this file together with the jx9 scripting engine source code
+	to generate</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	the executable. For example: </font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	 gcc -W -Wall -O6 -o test jx9_hostapp_info.c jx9.c</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*/</font></font></font></p></li><li><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+    </font></font></font></li><li><p style="margin-bottom: 0cm;" lang="en-US"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*
+	Make sure you have the latest release of the JX9 engine</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	from:</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	 http://jx9.symisc.net/downloads.html</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">#include</font><font color="#000000">
+	</font><font color="#a31515">&lt;stdio.h&gt;</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">#include</font><font color="#000000">
+	</font><font color="#a31515">&lt;stdlib.h&gt;</font></font></font></p>
+	</li><li><br>
+</li><li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*
+	Make sure this header file is available.*/</font></font></font></p>
+
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">#include</font><font color="#000000">
+	</font><font color="#a31515">"jx9.h"</font></font></font></p>
+	</li><li><br>
+</li><li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*
+	</font></font></font>
+	</p>
+
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	Display an error message and exit.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">static</font><font color="#000000">
+	</font><font color="#0000ff">void</font><font color="#000000">
+	Fatal(</font><font color="#0000ff">const</font><font color="#000000">
+	</font><font color="#0000ff">char</font><font color="#000000">
+	*zMsg)</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">{</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp; puts(zMsg);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;	</font><font color="#008000">/*
+	Shutdown the library */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	jx9_lib_shutdown();</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;	</font><font color="#008000">/*
+	Exit immediately */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	exit(0);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">}</font></font></font></p></li><li><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+    </font></font></font></li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	VM output consumer callback.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	Each time the virtual machine generates some outputs, the following</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	function gets called by the underlying virtual machine to consume</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	the generated output.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	All this function does is redirecting the VM output to STDOUT.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	This function is registered later via a call to jx9_vm_config()</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+	with a configuration verb set to: JX9_VM_CONFIG_OUTPUT.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">static</font><font color="#000000">
+	</font><font color="#0000ff">int</font><font color="#000000">
+	Output_Consumer(</font><font color="#0000ff">const</font><font color="#000000">
+	</font><font color="#0000ff">void</font><font color="#000000">
+	*pOutput, </font><font color="#0000ff">unsigned</font><font color="#000000">
+	</font><font color="#0000ff">int</font><font color="#000000">
+	nOutputLen, </font><font color="#0000ff">void</font><font color="#000000">
+	*pUserData </font><font color="#008000">/* Unused */</font><font color="#000000">)</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">{</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	</font><font color="#008000">/*
+	</font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+	* Note that it's preferable to use the write() system call to
+	display the output</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+	* rather than using the libc printf() which everybody now is
+	extremely slow.</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+	*/</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;	printf(</font><font color="#a31515">"%.*s"</font><font color="#000000">,
+	</font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		nOutputLen,
+	</font></font></font>
+	</p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		(</font><font color="#0000ff">const</font><font color="#000000">
+	</font><font color="#0000ff">char</font><font color="#000000">
+	*)pOutput </font><font color="#008000">/* Not null terminated */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;		);</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;	</font><font color="#008000">/*
+	All done, VM output was redirected to STDOUT */</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;	</font><font color="#0000ff">return</font><font color="#000000">
+	JX9_OK;</font></font></font></p>
+	</li><li><p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">}</font></font></font></p></li>
+  <li><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*</font></font></font></li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+The following walker callback is made available to the
+[jx9_array_walk()] interface </font></font></font>
+    </p>
+
+    <p style="margin-bottom: 0cm;"><font color="#008000"> </font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+which is used to iterate over the JSON object extracted from the
+running script.</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font color="#008000"> </font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+(See below for more information).<br>
+</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*/</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">static</font><font color="#000000">
+</font><font color="#0000ff">int</font><font color="#000000">
+JsonObjectWalker(jx9_value *pKey,jx9_value *pData,</font><font color="#0000ff">void</font><font color="#000000">
+*pUserData </font><font color="#008000">/* Unused */</font><font color="#000000">)</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">{</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp; const</font><font color="#000000">
+</font><font color="#0000ff">char</font><font color="#000000">
+*zKey,*zData;</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; /*
+Extract the key and the data field */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	zKey
+= jx9_value_to_string(pKey,0);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	zData
+= jx9_value_to_string(pData,0);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp;&nbsp; /*
+Dump */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	printf(</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">		</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#a31515">&nbsp;&nbsp;&nbsp;&nbsp; "%s
+===&gt; %s\n"</font><font color="#000000">,</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;		zKey,</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;		zData</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp; return</font><font color="#000000">
+JX9_OK;</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">}</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">/*
+    </font></font></font>
+    </p>
+
+    <p style="margin-bottom: 0cm;"><font color="#008000"> </font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*
+Main program: Compile and execute the JX9 program defined above.</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font color="#008000"> </font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">*/</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">int</font><font color="#000000">
+main(</font><font color="#0000ff">int</font><font color="#000000">
+argc,</font><font color="#0000ff">char</font><font color="#000000">
+**argv)</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">{</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	<a href="c_api_object.html#jx9_value"><span style="font-weight: bold;">jx9_value</span></a>
+*pScalar,*pObject; </font><font color="#008000">/* Foreign JX9
+variable to be installed later */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	<a style="font-weight: bold;" href="c_api_object.html#jx9">jx9</a>
+*pEngine; </font><font color="#008000">/* JX9 engine handle*/</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	<a href="c_api_object.html#jx9_vm"><span style="font-weight: bold;">jx9_vm</span></a>
+*pVm;  </font><font color="#008000">/* Compiled JX9 program */</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp; int</font><font color="#000000">
+rc;</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp; int</font><font color="#000000">
+n;</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><br>
+    </p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; /*
+Allocate a new jx9 engine instance */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	rc
+= jx9_init(&amp;pEngine);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp; if</font><font color="#000000">(
+rc != JX9_OK ){</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">		</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp; Fatal(</font><font color="#a31515">"Error
+while allocating a new JX9 engine instance"</font><font color="#000000">);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	}</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; <br>
+    </font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; /*
+Compile the test program defined above */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	rc
+= jx9_compile(pEngine,JX9_PROG,</font><font color="#000000">-1,&amp;pVm);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp; if</font><font color="#000000">(
+rc != JX9_OK ){</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">		</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp;&nbsp; if</font><font color="#000000">(
+rc == JX9_COMPILE_ERR ){</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">			</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp; const</font><font color="#000000">
+</font><font color="#0000ff">char</font><font color="#000000">
+*zErrLog;</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">			</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp; int</font><font color="#000000">
+nLen;</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">			</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp; /*
+Extract error log */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;			jx9_config(pEngine,
+    </font></font></font>
+    </p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				JX9_CONFIG_ERR_LOG,
+    </font></font></font>
+    </p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				&amp;zErrLog,
+    </font></font></font>
+    </p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				&amp;nLen</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">			</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp;&nbsp; if</font><font color="#000000">(
+nLen &gt; 0 ){</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">				</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /*
+zErrLog is null terminated */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puts(zErrLog);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp; }</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;		}</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">		</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; /*
+Exit */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;		Fatal(</font><font color="#a31515">"Compile
+error"</font><font color="#000000">);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	}</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li><br>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">/*
+Register script agruments so we can access them later using the
+$argv[]</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	
+* array from the compiled JX9 program.</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	
+*/</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp;for</font><font color="#000000">(
+n = 1; n &lt; argc ; ++n ){</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp; jx9_vm_config(pVm,
+JX9_VM_CONFIG_ARGV_ENTRY, argv[n]</font><font color="#008000">/*
+Argument value */</font><font color="#000000">);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	}</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><br>
+    </p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">/*</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	
+* Now we have our script compiled, it's time to configure our VM.</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	
+* We will install the VM output consumer callback defined above</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	
+* so that we can consume the VM output and redirect it to STDOUT.</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	
+*/</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	rc
+= jx9_vm_config(pVm, </font></font></font>
+    </p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JX9_VM_CONFIG_OUTPUT,
+    </font></font></font>
+    </p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Output_Consumer,
+   </font><font color="#008000">/* Output Consumer callback */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		0
+                  </font><font color="#008000">/* Callback private
+data */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;		);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp;&nbsp; if</font><font color="#000000">(
+rc != JX9_OK ){</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Fatal(</font><font color="#a31515">"Error
+while installing the VM output consumer callback"</font><font color="#000000">);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	}</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp;/*
+    </font></font></font>
+    </p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp; * Create a simple scalar variable.</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+*/<br>
+    </font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp; pScalar
+= jx9_new_scalar(pVm);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp; if</font><font color="#000000">(
+pScalar == 0 ){</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;		Fatal(</font><font color="#a31515">"Cannot
+create foreign variable $my_app"</font><font color="#000000">);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	}</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp;&nbsp; /*
+Populate the variable with the desired information */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp; jx9_value_string(pScalar,</font><font color="#a31515">"My
+Host Application/1.2.5"</font><font color="#000000">,-1</font><font color="#008000">/*Compule
+length automatically*/</font><font color="#000000">); </font><font color="#008000">/*
+Dummy signature*/</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  <br>
+</li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; /* <br>
+    </font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+* Install the variable ($my_app).</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+*/</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	rc
+= jx9_vm_config(</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		
+ pVm,</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		
+ JX9_VM_CONFIG_CREATE_VAR, </font><font color="#008000">/* Create
+variable command */</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">		
+ </font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#a31515">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "my_app"</font><font color="#000000">,
+</font><font color="#008000">/* Variable name (without the dollar
+sign) */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		
+ pScalar   </font><font color="#008000">/* Value */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp;&nbsp;&nbsp; if</font><font color="#000000">(
+rc != JX9_OK ){</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fatal(</font><font color="#a31515">"Error
+while installing $my_app"</font><font color="#000000">);<br>
+</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp; }</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; /*
+To access this foreign variable from the running script, simply
+invoke it</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+* as follows:</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp; *  print $my_app;</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+* or</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+*  dump($my_app);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;	
+*/</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><br>
+    </p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp;/*</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+* Now, it's time to create and install a more complex variable which
+is a JSON</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+* object named $my_data.</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+* The JSON Object looks like this:</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+*  {</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+*     "path" : "/usr/local/etc",</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+*     "port" : 8082,</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+*     "fork" : true</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+*  };</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+*/</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp; <br>
+    </font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;">&nbsp; <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">pObject
+= jx9_new_array(pVm); </font><font color="#008000">/* Unified
+interface for JSON Objects and Arrays */</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;/*
+Populate the object with the fields defined above. */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	jx9_value_reset_string_cursor(pScalar);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; /*
+Add the "path" : "/usr/local/etc" entry */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp; jx9_value_string(pScalar,</font><font color="#a31515">"/usr/local/etc"</font><font color="#000000">,-1);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	jx9_array_add_strkey_elem(pObject,</font><font color="#a31515">"path"</font><font color="#000000">,pScalar);
+</font><font color="#008000">/* Will make it's own copy of pScalar */</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; /*
+Add the "port" : 8080 entry */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	jx9_value_int(pScalar,8080);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	jx9_array_add_strkey_elem(pObject,</font><font color="#a31515">"port"</font><font color="#000000">,pScalar);
+</font><font color="#008000">/* Will make it's own copy of pScalar */</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; /*
+Add the "fork": true entry */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp; jx9_value_bool(pScalar,1
+    </font><font color="#008000">/* TRUE */</font><font color="#000000">);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	jx9_array_add_strkey_elem(pObject,</font><font color="#a31515">"fork"</font><font color="#000000">,pScalar);
+</font><font color="#008000">/* Will make it's own copy of pScalar */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><br>
+    </p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; /*
+Now, install the variable and associate the JSON object with it */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	rc
+= jx9_vm_config(</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		
+ pVm,</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		
+ JX9_VM_CONFIG_CREATE_VAR, </font><font color="#008000">/* Create
+variable command */</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">		
+ </font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#a31515">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "my_data"</font><font color="#000000">,
+</font><font color="#008000">/* Variable name (without the dollar
+sign) */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		
+ pObject    </font><font color="#008000">/*value */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp;if</font><font color="#000000">(
+rc != JX9_OK ){</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp; Fatal(</font><font color="#a31515">"Error
+while installing $my_data"</font><font color="#000000">);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	}</font></font></font></p></li>
+  <li><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+    </font></font></font></li>
+
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp; /*
+Release the two values */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	jx9_release_value(pVm,pScalar);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	jx9_release_value(pVm,pObject);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><br>
+    </p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp;/*</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp; * And finally, execute our program. Note that your output (STDOUT in
+our case)</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+* should display the result.</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+*/</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	jx9_vm_exec(pVm,
+0);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp;/*
+Extract the content of the variable named $my_config defined in the </font></font></font>
+    </p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+* running script which hold a simple JSON object. </font></font></font>
+    </p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	
+*/</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;	pObject
+= jx9_vm_extract_variable(pVm,</font><font color="#a31515">"my_config"</font><font color="#000000">);</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">&nbsp;if</font><font color="#000000">(
+pObject &amp;&amp; jx9_value_is_json_object(pObject) ){</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">		</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp;&nbsp; /*
+Iterate over object entries */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">&nbsp;&nbsp;		printf(</font><font color="#a31515">"\n\nTotal
+entries in $my_config = %u\n"</font><font color="#000000">,jx9_array_count(pObject));</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;&nbsp;		jx9_array_walk(pObject,JsonObjectWalker,0);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">	}</font></font></font></p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#008000">&nbsp;/*
+All done, cleanup the mess left behind.</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#008000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp; */</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	jx9_vm_release(pVm);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">&nbsp;	jx9_release(pEngine);</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><br>
+    </p>
+
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#000000">	</font></font></font></p>
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><font color="#0000ff">return</font><font color="#000000">
+0;</font></font></font></p>
+
+  </li>
+  <li>
+    <p style="margin-bottom: 0cm;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">}</font></font></font></p>
+
+  </li>
+</ol>
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+</div>
+<ul>
+
+</ul>
+
+
+
+<h1 class="western" align="left">
+</h1>
+<p style="margin-bottom: 0cm; font-weight: bold;"><font color="#000000"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><a href="http://symisc.net/downloads/jx9_hostapp_info.c">Get a copy of the C file.</a></font></font></font></p>
+<p style="margin-bottom: 0cm;">
+</p>
+<ul>
+<li><p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+	create a new Jx9 engine instance on line 82 using a call to <a href="c_api_func.html#jx9_init">jx9_init()</a>.</font></font></p>
+	</li><li><p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+	compile our Jx9 test program on line 88 using a call to <a href="c_api_func.html#jx9_compile">jx9_compile()</a>.</font></font></p>
+	</li><li><p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+	pass command line arguments to the target Jx9 script ($argv
+	predefined variable) on line 112 using a call to <a href="c_api_func.html#jx9_vm_config">jx9_vm_config()</a> with a
+	configuration verb set to: <a href="c_api_func.html#jx9_vm_config">JX9_VM_CONFIG_ARGV_ENTRY</a>.</font></font></p></li>
+  <li><font face="Verdana, sans-serif"><font size="2">We
+	install a <a href="output_consumer.html">VM output consumer callback </a>on line 120 using a call to
+	jx9_vm_config() with a configuration verb set to:
+	JX9_VM_CONFIG_OUTPUT.</font></font></li>
+<li><p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+	create a simple scalar foreign variable on line 131 using a call to
+	<a href="c_api_func.html#On_demand_jx9_value_allocation">jx9_new_scalar()</a>.</font></font></p>
+	</li><li><p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+	populate the scalar variable with the desired value, here the
+	application name on line 136 using a call to <a href="c_api_func.html#Populating_Dynamically_Typed_Value_Object">jx9_value_string()</a>.</font></font></p>
+	</li><li><p style="margin-bottom: 0cm;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+	install the foreign variable as <i>$my_app </i><span style="font-style: normal;">on</span><i>
+	</i><span style="font-style: normal;">line 141 using a call to
+	<a href="c_api_func.html#jx9_vm_config">jx9_vm_config()</a> with a configuration verb set to:
+	<a href="c_api_func.html#vm_config_create_var">JX9_VM_CONFIG_CREATE_VAR</a>.</span></font></font></p>
+	</li><li><p style="margin-bottom: 0cm; font-style: normal;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+	create an empty JSON object on line 168 using a call to <a href="c_api_func.html#On_demand_jx9_value_allocation">jx9_new_array()</a>.</font></font></p>
+	</li><li><p style="margin-bottom: 0cm; font-style: normal;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+	populate our JSON object on line 170 til line 179 with the desired fields
+	using the <a href="c_api_func.html#Populating_Dynamically_Typed_Value_Object">jx9_value_*()</a> and <a href="c_api_func.html#jx9_array_add_elem">jx9_array_add_*()</a> interfaces.</font></font></p>
+	</li><li><p style="margin-bottom: 0cm; font-style: normal;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+	install our JSON object as a foreign variable named <i>$my_data </i>on<i>
+	</i>line 182 using a call to <a href="c_api_func.html#jx9_vm_config">jx9_vm_config()</a> with a configuration verb
+	set to: <a href="c_api_func.html#vm_config_create_var">JX9_VM_CONFIG_CREATE_VAR</a>.</font></font></p></li><li><p style="margin-bottom: 0cm; font-style: normal;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+	execute our JX9 program on line 200 using a call to <a href="c_api_func.html#jx9_vm_exec">jx9_vm_exec()</a>.</font></font></p>
+	</li><li><p style="margin-bottom: 0cm; font-style: normal;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+extract the content of the variable named $my_config (A JSON object)
+declared inside the executed Jx9 script on line 204 using a call to <a href="c_api_func.html#jx9_vm_extract_variable">jx9_vm_extract_variable()</a>.</font></font></p>
+	</li><li><p style="margin-bottom: 0cm; font-style: normal;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">We
+	iterate over the elements of the extracted JSON object on line 208 using
+	a call to <a href="c_api_func.html#jx9_array_walk">jx9_array_walk()</a>.</font></font></p>
+	</li><li><p style="margin-bottom: 0cm; font-style: normal;" lang="en-US"><font face="Verdana, sans-serif"><font size="2">finally,
+	cleanup is done on line 212 and 213 using a call to <a href="c_api_func.html#jx9_vm_release">jx9_vm_release()</a> and
+	<a href="c_api_func.html#jx9_release">jx9_release()</a>.</font></font></p>
+</li>
+</ul>
+
+<p style="margin-bottom: 0cm;">
+</p>
+
+
+
+<h1 class="western" align="left"><small><font face="Verdana, sans-serif"><font size="3"><small><b>Standalone
+Interpreter For Jx9</b></small></font></font></small></h1>
+
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">The
+Jx9 </font></font><a href="downloads.html"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">download</span></font></font></a><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">
+page</span></font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+includes a simple standalone Jx9 interpreter named </font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><b>jx9</b></font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+(or </font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><b>jx9</b></font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><b>.exe</b></font></font><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">
+on windows) that allows the user to enter and execute Jx9 files
+against a Jx9 engine. This utility is available in prebuilt binaries
+forms or can be compiled from source. You
+can get a copy of the Jx9 interpreter from the </font><a href="downloads.html"><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">download</span></font></a><font style="font-size: 10pt;" size="2"><span style="font-weight: normal;">
+page</span></font><font style="font-size: 10pt;" size="2">.</font></font></p>
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">To
+start the <b>jx9 </b>program, just type "jx9" followed by
+the name of the Jx9 file to xecute. That is, the
+first argument is to the interpreter, the rest are scripts
+arguments, press "Enter" and the Jx9 code will be executed.</font></font></p>
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">If
+something goes wrong while processing the Jx9 script due to a
+compile-time error, your error output (STDOUT) should display the compile-time error messages.</font></font></p>
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+</font></font></p>
+
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Usage
+example of the jx9 interpreter:</font></font></p>
+
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><i>Running
+the interpreter</i></font></font></p>
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"> <b>jx9
+scripts/hello_world.jx9.txt</b></font></font></p>
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><i>Running
+the interpreter with script arguments</i></font></font></p>
+<p> <font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><b>jx9
+scripts/mp3_tag.jx9.txt /usr/local/path/to/my_mp3s</b></font></font></p>
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+</font></font></p>
+<p><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">The
+Jx9 interpreter package includes over 40 Jx9 scripts to test from simple hello world programs to ZIP
+archive extracting, MP3 tag extracting, JSON
+encoding/decoding, INI processing, UTF-8 encoding/decoding and many
+more. These scripts are available in the <span style="font-style: italic;">scripts</span> directory of the zip archive.</font></font></p>
+<h1 class="western" align="left"><small><font face="Verdana, sans-serif"><font size="3"><small><b>Next</b></small></font></font></small></h1>
+<p style="font-weight: normal;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Check
+out the </font><a href="api_intro.html"><font style="font-size: 10pt;" size="2">Introduction
+To The Jx9 C/C++ Interface</font></a><font style="font-size: 10pt;" size="2">
+for an introductory overview and roadmap to the dozens of Jx9
+interface functions.</font></font></p>
+
+
+<p style="font-weight: normal;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+</font></font></p>
+<p style="font-weight: normal;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">A
+separate document, </font><a href="c_api.html"><font style="font-size: 10pt;" size="2">The
+Jx9 C/C++ Interface</font></a><font style="font-size: 10pt;" size="2">,
+provides detailed specifications for all of the various C/C++ APIs
+for Jx9. Once the reader understands the basic principles of
+operation for Jx9,</font><a href="c_api.html"><font style="font-size: 10pt;" size="2"> that
+document</font></a><font style="font-size: 10pt;" size="2"> should be
+used as a reference guide.</font></font></p>
+<p style="font-weight: normal;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2"><br>
+</font></font></p>
+
+
+<p style="font-weight: normal;" align="left"><font face="Verdana, sans-serif"><font style="font-size: 10pt;" size="2">Any
+questions, check the <a href="faq.html">Frequently Asked Questions</a>
+page or visit the <a href="support.html">Support Page</a> for online
+community support.</font></font></p>
+<br>
+</div>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: right; margin-top: 0px; height: 91px;"><small><small><a href="http://www.symisc.net/"><img style="border: 0px solid ; width: 170px; height: 70px;" alt="Symisc Systems" src="images/symisc.png"></a></small></small>
+<div style="text-align: left; margin-top: 0px; height: 14px;"><small><small style="font-family: Verdana;">Copyright © <a href="http://www.symisc.net/">Symisc Systems</a></small></small><br>
+</div>
+</div>
+</div>
+
+</body></html>
